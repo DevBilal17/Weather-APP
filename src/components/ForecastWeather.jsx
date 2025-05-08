@@ -5,17 +5,19 @@ const ForecastWeather = ({ forecast }) => {
   return (
     <div className="w-full">
       <h3 className="text-center font-bold">5-Day Forecast:</h3>
-      <div className="w-full flex items-center justify-between my-5">
+      <div className="w-full flex items-center md:flex-row flex-col md:gap-0 gap-4 justify-between my-5">
         {forecast?.slice(1).map((item, index) => {
           return (
-            <Tooltip key={item.date} content={item.desc} >
+         
               <ForecastCard
+              key={item.date}
                 day={item.day}
                 celcius={item.celcius}
                 fahrenheit={item.fahrenheit}
                 image={item.iconURL}
+                desc={item.desc}
               />
-            </Tooltip>
+     
           );
         })}
         {/* <ForecastCard day={'Wed'} celcius={'23'} fahrenheit={'74'} image={'/few-clouds-day.png'}/>

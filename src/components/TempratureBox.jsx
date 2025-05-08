@@ -39,14 +39,14 @@ const TempratureBox = () => {
           </h2>
           <p className="italic font-semibold">{getCurrentDate()}</p>
           <div>
-            <div className="flex items-center gap-4">
+            <div className="flex md:flex-row flex-col items-center gap-4">
               <img
                 src={`https://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`}
                 alt={apiData.weather[0].description}
                 className="w-[140px]"
               />
               {celcius ? (
-                <div className="flex text-6xl font-bold">
+                <div className="flex md:text-6xl text-5xl font-bold">
                   {tempToCelcius()}
                   <div
                     className="flex gap-1 items-start justify-center text-2xl"
@@ -62,7 +62,7 @@ const TempratureBox = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex text-6xl font-bold">
+                <div className="flex md:text-6xl text-5xl font-bold">
                   {tempToFahrenheit()}
                   <div
                     className="flex gap-1 items-start justify-center text-2xl"
@@ -84,27 +84,27 @@ const TempratureBox = () => {
             </div>
           </div>
 
-          <div className="w-full flex items-center justify-around mt-4">
-            <div className="flex gap-2 items-center">
+          <div className="w-full flex  items-center justify-around mt-4">
+            <div className="flex gap-0.5 sm:gap-2 items-center">
               <div className="h-full">
-                <BsWind className="text-4xl" />
+                <BsWind className="md:text-4xl text-2xl" />
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold text-lg">
+                <div className="font-semibold md:text-lg text-sm">
                   {apiData.wind.speed} m/s
                 </div>
-                <div className="font-semibold text-lg">Wind speed</div>
+                <div className="font-semibold md:text-lg text-sm">Wind speed</div>
               </div>
             </div>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-0.5 sm:gap-2 items-center">
               <div className="h-full">
-                <WiHumidity className="text-4xl" />
+                <WiHumidity className="md:text-4xl text-3xl" />
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold text-lg">
+                <div className="font-semibold md:text-lg text-sm">
                   {apiData.main.humidity}%
                 </div>
-                <div className="font-semibold text-lg">Humidity</div>
+                <div className="font-semibold md:text-lg text-sm">Humidity</div>
               </div>
             </div>
           </div>

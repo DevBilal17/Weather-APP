@@ -9,9 +9,12 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   width: 100%;
-  padding: 0;
+  padding: 20px;
 }
 
 /* .tooltip-arrow::before {
   background-color: #2563eb; 
 } */
+ .tooltip .w-fit{
+  width: 100% !important;
+ }
